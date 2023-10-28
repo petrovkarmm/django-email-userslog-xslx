@@ -89,6 +89,8 @@ def run():
 
         email.send()
 
+        os.remove(path_to_file)
+
 
 if __name__ == '__main__' or __name__ == 'django.core.management.commands.shell':
     run()
