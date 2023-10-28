@@ -10,7 +10,7 @@ class SetLastUserActivityMiddleware:
 
         current_user = request.user
 
-        if current_user.is_authenticated:
+        if current_user.is_authenticated and current_user.profile.role == 'teacher':  # inventic model
             current_user.last_login = now()
             current_user.save()
         return response
